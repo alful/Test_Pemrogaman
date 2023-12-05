@@ -20,40 +20,41 @@ use App\Http\Controllers\KategoriController;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+//     // $password = md5('bisacoding-03-12-23');
+//     // dd($password);
+
+//     // $url = 'https://recruitment.fastprint.co.id/tes/api_tes_programmer';
+//     // // $client = new GuzzleHttp\Client();
+//     // // $response = $client->request('POST', $url, [
+//     // //     'auth' => ['tesprogrammer031223C02', $password]
+//     // // ]);
+
+
+//     // $response = Http::post('http://recruitment.fastprint.co.id/tes/api_tes_programmer');
+//     // $response = Http::withDigestAuth('tesprogrammer031223C09', $password)
+//     //     ->accept('application/json')
+//     //     ->post(
+//     //         $url,
+//     //         [
+//     //             'Key A' => 'Value A',
+//     //             'Key B' => 'Value B'
+//     //         ]
+//     //     );
+
+//     // if ($response->ok()) {
+//     //     $users = $response->json();
+//     //     dd($users);
+//     // } else {
+//     //     dd($response);
+//     // }
+//     // dd($response->getStatusCode());
+// });
 Route::get('/', function () {
-    // return view('welcome');
-    $password = md5('bisacoding-03-12-23');
-    dd($password);
-
-    $url = 'https://recruitment.fastprint.co.id/tes/api_tes_programmer';
-    // $client = new GuzzleHttp\Client();
-    // $response = $client->request('POST', $url, [
-    //     'auth' => ['tesprogrammer031223C02', $password]
-    // ]);
-
-
-    $response = Http::post('http://recruitment.fastprint.co.id/tes/api_tes_programmer');
-    $response = Http::withDigestAuth('tesprogrammer031223C09', $password)
-        ->accept('application/json')
-        ->post(
-            $url,
-            [
-                'Key A' => 'Value A',
-                'Key B' => 'Value B'
-            ]
-        );
-
-    if ($response->ok()) {
-        $users = $response->json();
-        dd($users);
-    } else {
-        dd($response);
-    }
-    // dd($response->getStatusCode());
-});
-Route::get('/home', function () {
     return view('home', [
-        'produk' => Produk::where('status_id', 2)->get(),
+        'produk_id' => Produk::where('status_id', 2)->get(),
+        'produk' => Produk::get(),
         'kategori' => Kategori::get(),
         'status' => Status::get(),
     ]);

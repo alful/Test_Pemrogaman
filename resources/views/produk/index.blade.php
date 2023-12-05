@@ -10,7 +10,7 @@
         </div>
     @endif
 
-    <div class="table-responsive col-lg-6">
+    <div class="table-responsive col-lg-9">
         <a href="produk/create" class="btn btn-primary mb-3">Create new Produk</a>
         <table class="table table-striped table-sm">
             <thead>
